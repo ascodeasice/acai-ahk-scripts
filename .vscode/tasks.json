@@ -1,0 +1,23 @@
+{
+  "tasks": [
+    {
+      "label": "workspace:compile ahk",
+      "command": "${command:ahk++.compile}",
+      "problemMatcher": []
+    },
+    {
+      "label": "workspace:run ahk",
+      "command": "${command:ahk++.run}",
+      "problemMatcher": [],
+    },
+    {
+      "label": "Workspace: Compile and Run Ahk",
+      "problemMatcher": [],
+      "dependsOn": [
+        "workspace:compile ahk",
+        "workspace:run ahk"
+      ],
+      "dependsOrder": "sequence"
+    }
+  ]
+}
