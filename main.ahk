@@ -16,7 +16,7 @@ Return
 
   !q:: Escape ; Alt+Q=Esc
 
-  ^CapsLock::CapsLock
+  !CapsLock::CapsLock ; use alt capslock to use normal capslock
 
 ; Rotate second display screen
 ^!r:: ; Ctrl+Alt+R
@@ -49,4 +49,3 @@ Return
     winClose "A"
   }
 
-  
