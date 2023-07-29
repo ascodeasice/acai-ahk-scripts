@@ -23,7 +23,7 @@ Return
   {
     Vertical := MsgBox("Yes:Vertical, No:Horizontal",, "YesNo")
     Run("ms-settings:screenrotation")
-    sleep 2000 ; wait until settHelloing tab is opened
+    sleep 3000 ; wait until setting tab is opened
     Send "{TAB 4}"
     Send "{Enter}" ; select the second display screen
 
