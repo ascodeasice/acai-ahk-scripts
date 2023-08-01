@@ -49,3 +49,7 @@ Return
     winClose "A"
   }
 
+!+CapsLock:: ; alt+shift+capslock = alt+f4(close window)
+  {
+    Send "!{f4}"
+  }
