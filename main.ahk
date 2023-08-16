@@ -1,6 +1,6 @@
 #SingleInstance force
 
-^Esc::ExitApp ; exit when bug exits
+#Esc::ExitApp ; win+escape to exit when bug exits
 CapsLock:: Delete ; turn caps lock into right shift
 
 ; Start WSL Terminal in the repo directory
@@ -47,9 +47,4 @@ Return
     ; close the window
     sleep 1000
     winClose "A"
-  }
-
-#CapsLock:: ; win+capslock = alt+f4(close window)
-  {
-    Send "!{f4}"
   }
