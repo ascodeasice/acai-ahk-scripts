@@ -48,3 +48,8 @@ Return
     sleep 1000
     winClose "A"
   }
+
+#CapsLock:: ; win+capslock = alt+f4(close window)
+{
+  Send "!{f4}"
+}
