@@ -5,8 +5,9 @@ CapsLock:: Delete ; turn caps lock into right shift
 
 ; Start WSL Terminal in the repo directory
 ^!t:: ; Ctrl+Alt+T
-  #u::RunWait("wsl --cd \\wsl.localhost\Ubuntu\home\leo\repo")
-Return
+{
+  Run("wsl --cd \\wsl.localhost\Ubuntu\home\leo\repo")
+}
 
 ; Open cmd in code folder
 ^!c:: ; Ctrl+Alt+C
