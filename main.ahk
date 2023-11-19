@@ -9,12 +9,6 @@ CapsLock:: Delete ; turn caps lock into right shift
   Run("wsl --cd \\wsl.localhost\Ubuntu\home\leo\repo")
 }
 
-; Open cmd in code folder
-^!c:: ; Ctrl+Alt+C
-  {
-    Run("cmd.exe /K cd c:\myFolder\code")
-  }
-
   !q:: Escape ; Alt+Q=Esc
 
   !CapsLock::CapsLock ; use alt capslock to use normal capslock
