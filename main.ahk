@@ -16,7 +16,11 @@ CapsLock::Delete ; turn caps lock into right shift
 ; Rotate second display screen
 ^!r:: ; Ctrl+Alt+R
 {
-  Vertical := MsgBox("Yes:Vertical, No:Horizontal", , "YesNo")
+  Vertical := MsgBox("Yes:Vertical, No:Horizontal", , "YesNoCancel")
+
+  if (Vertical = 'Cancel')
+    return
+
   Run("ms-settings:screenrotation")
   sleep 3000 ; wait until setting tab is opened
   Send "{TAB 4}"
