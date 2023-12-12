@@ -1,7 +1,34 @@
-#SingleInstance force
+
+
+; caps lock: escape
+; caps+key: ctrl+key
+; alt+caps: caps
+; win+caps: alt+f4
+*CapsLock::
+{
+    Send "{LControl down}"
+}
+
+*CapsLock up::
+{
+    Send "{LControl Up}"
+
+    if (A_PriorKey=="CapsLock"){
+	if (A_TimeSincePriorHotkey < 1000)
+		Suspend "1"
+		Send "{Esc}"
+		Suspend "0"
+	}
+}
+
+!CapsLock::CapsLock ; use alt capslock to use normal capslock
+
+#CapsLock:: ; win+capslock = alt+f4(close window)
+{
+  Send "!{f4}"
+}
 
 #Esc:: ExitApp ; win+escape to exit when bug exits
-CapsLock::Delete ; turn caps lock into right shift
 
 ; Start WSL Terminal in the repo directory
 ^!t:: ; Ctrl+Alt+T
@@ -12,6 +39,8 @@ CapsLock::Delete ; turn caps lock into right shift
 !q::Escape ; Alt+Q=Esc
 
 !CapsLock::CapsLock ; use alt capslock to use normal capslock
+
+^CapsLock::Delete ; Ctrl+CapsLock = Delete
 
 ; Rotate second display screen
 ^!r:: ; Ctrl+Alt+R
@@ -46,11 +75,6 @@ CapsLock::Delete ; turn caps lock into right shift
   ; close the window
   sleep 1000
   winClose "A"
-}
-
-#CapsLock:: ; win+capslock = alt+f4(close window)
-{
-  Send "!{f4}"
 }
 
 ; ctrl+q = Escape
