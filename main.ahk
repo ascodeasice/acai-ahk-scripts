@@ -1,4 +1,4 @@
-
+#SingleInstance force
 
 ; caps lock: escape
 ; caps+key: ctrl+key
