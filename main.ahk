@@ -38,8 +38,6 @@
 
 !q::Escape ; Alt+Q=Esc
 
-!CapsLock::CapsLock ; use alt capslock to use normal capslock
-
 ^CapsLock::Delete ; Ctrl+CapsLock = Delete
 
 ; Rotate second display screen
