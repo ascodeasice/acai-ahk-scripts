@@ -82,3 +82,37 @@
 {
   Send "{Escape}"
 }
+
+; alt hjkl to directions
+!k::
+{
+  Send "{Up}"   ;;输入 上 键
+  return
+}
+
+!j::{
+  Send "{Down}"
+  return
+}
+
+!h::
+{
+  Send "{Left}"
+  return
+}
+
+!l::
+{
+  Send "{Right}"
+  return
+}
+
+#+h::{
+  Send "{LWin down}{Shift down}{Left}{LWin Up}{Shift up}"
+  return
+}
+
+#+l::{
+  Send "{LWin down}{Shift down}{Right}{LWin Up}{Shift up}"
+  return
+}
