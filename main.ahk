@@ -82,28 +82,28 @@
 }
 
 ; alt hjkl to directions
-!k::
-{
-  Send "{Up}"   ;;输入 上 键
-  return
-}
+!h:: Send "{Left}"
+!j:: Send "{Down}"
+!k::Send "{Up}"
+!l:: Send "{Right}"
 
-!j::{
-  Send "{Down}"
-  return
-}
+; Shift modifier
++!h::Send("+{Left}")
++!j::Send("+{Down}")
++!k::Send("+{Up}")
++!l::Send("+{Right}")
 
-!h::
-{
-  Send "{Left}"
-  return
-}
+; Ctrl modifier
+^!h::Send("^{Left}")
+^!j::Send("^{Down}")
+^!k::Send("^{Up}")
+^!l::Send("^{Right}")
 
-!l::
-{
-  Send "{Right}"
-  return
-}
+; Ctrl+Shift
+^+!h::Send("^+{Left}")
+^+!j::Send("^+{Down}")
+^+!k::Send("^+{Up}")
+^+!l::Send("^+{Right}")
 
 #+h::{
   Send "{LWin down}{Shift down}{Left}{LWin Up}{Shift up}"
