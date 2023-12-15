@@ -116,3 +116,4 @@
 }
 
 RAlt::Send("{BackSpace}")
+^RAlt::Send("^{BackSpace}")
