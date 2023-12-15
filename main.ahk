@@ -114,3 +114,5 @@
   Send "{LWin down}{Shift down}{Right}{LWin Up}{Shift up}"
   return
 }
+
+RAlt::Send("{BackSpace}")
