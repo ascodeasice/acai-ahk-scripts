@@ -117,3 +117,4 @@
 
 RAlt::Send("{BackSpace}")
 ^RAlt::Send("^{BackSpace}")
+LAlt & RAlt::Send("{Enter}")
