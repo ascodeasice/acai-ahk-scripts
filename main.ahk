@@ -28,6 +28,8 @@
   Send "!{f4}"
 }
 
+^CapsLock::Delete ; Ctrl+CapsLock = Delete
+
 #Esc:: ExitApp ; win+escape to exit when bug exits
 
 ; Start WSL Terminal in the repo directory
@@ -35,10 +37,6 @@
 {
   Run("wsl --cd \\wsl.localhost\Ubuntu\home\leo\repo")
 }
-
-!q::Escape ; Alt+Q=Esc
-
-^CapsLock::Delete ; Ctrl+CapsLock = Delete
 
 ; Rotate second display screen
 ^!r:: ; Ctrl+Alt+R
@@ -73,12 +71,6 @@
   ; close the window
   sleep 1000
   winClose "A"
-}
-
-; ctrl+q = Escape
-^q::
-{
-  Send "{Escape}"
 }
 
 ; alt hjkl to directions
