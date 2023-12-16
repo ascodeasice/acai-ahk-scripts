@@ -1,44 +1,48 @@
 #SingleInstance force
 
+; SECTION: capslock
+
 ; caps lock: escape
 ; caps+key: ctrl+key
-; alt+caps: caps
-; win+caps: alt+f4
 *CapsLock::
 {
-    Send "{LControl down}"
+  Send "{LControl down}"
 }
 
 *CapsLock up::
 {
-    Send "{LControl Up}"
+  Send "{LControl Up}"
 
-    if (A_PriorKey=="CapsLock"){
-	if (A_TimeSincePriorHotkey < 1000)
-		Suspend "1"
-		Send "{Esc}"
-		Suspend "0"
-	}
+  if (A_PriorKey == "CapsLock") {
+    if (A_TimeSincePriorHotkey < 1000)
+      Suspend "1"
+    Send "{Esc}"
+    Suspend "0"
+  }
 }
 
-!CapsLock::CapsLock ; use alt capslock to use normal capslock
+; alt+caps: caps
+!CapsLock::CapsLock
 
-#CapsLock:: ; win+capslock = alt+f4(close window)
+; win+caps: alt+f4
+#CapsLock::
 {
   Send "!{f4}"
 }
 
-^CapsLock::Delete ; Ctrl+CapsLock = Delete
+; Ctrl+CapsLock = Delete
+^CapsLock::Delete
 
-#Esc:: ExitApp ; win+escape to exit when bug exits
+; SECTION: win+escape to exit when bug exits
+#Esc:: ExitApp
 
-; Start WSL Terminal in the repo directory
+; SECTION: Start WSL Terminal in the repo directory
 ^!t:: ; Ctrl+Alt+T
 {
   Run("wsl --cd \\wsl.localhost\Ubuntu\home\leo\repo")
 }
 
-; Rotate second display screen
+; SECTION: Rotate second display screen
 ^!r:: ; Ctrl+Alt+R
 {
   Vertical := MsgBox("Yes:Vertical, No:Horizontal", , "YesNoCancel")
@@ -73,40 +77,41 @@
   winClose "A"
 }
 
-; alt hjkl to directions
+; SECTION: alt hjkl to directions
 !h:: Send "{Left}"
 !j:: Send "{Down}"
-!k::Send "{Up}"
+!k:: Send "{Up}"
 !l:: Send "{Right}"
 
 ; Shift modifier
-+!h::Send("+{Left}")
-+!j::Send("+{Down}")
-+!k::Send("+{Up}")
-+!l::Send("+{Right}")
++!h:: Send("+{Left}")
++!j:: Send("+{Down}")
++!k:: Send("+{Up}")
++!l:: Send("+{Right}")
 
 ; Ctrl modifier
-^!h::Send("^{Left}")
-^!j::Send("^{Down}")
-^!k::Send("^{Up}")
-^!l::Send("^{Right}")
+^!h:: Send("^{Left}")
+^!j:: Send("^{Down}")
+^!k:: Send("^{Up}")
+^!l:: Send("^{Right}")
 
 ; Ctrl+Shift
-^+!h::Send("^+{Left}")
-^+!j::Send("^+{Down}")
-^+!k::Send("^+{Up}")
-^+!l::Send("^+{Right}")
+^+!h:: Send("^+{Left}")
+^+!j:: Send("^+{Down}")
+^+!k:: Send("^+{Up}")
+^+!l:: Send("^+{Right}")
 
-#+h::{
+#+h:: {
   Send "{LWin down}{Shift down}{Left}{LWin Up}{Shift up}"
   return
 }
 
-#+l::{
+#+l:: {
   Send "{LWin down}{Shift down}{Right}{LWin Up}{Shift up}"
   return
 }
 
-RAlt::Send("{BackSpace}")
-^RAlt::Send("^{BackSpace}")
-LAlt & RAlt::Send("{Enter}")
+; SECTION: remap right alt
+RAlt:: Send("{BackSpace}")
+^RAlt:: Send("^{BackSpace}")
+LAlt & RAlt:: Send("{Enter}")
