@@ -16,3 +16,5 @@ My ahk scripts that I use daily, including rotating dual monitor, shortcut for w
 - map right alt to:
   - to `backspace` when pressed
   - to `enter` when pressing both `left alt` and `right alt`
+  - to `ctrl+enter` when pressing `left win + right alt`
+  - to `shift+enter` when pressing `shift+right alt` or `right alt + shift`

@@ -112,3 +112,5 @@
 RAlt:: Send("{BackSpace}")
 ^RAlt:: Send("^{BackSpace}")
 LAlt & RAlt:: Send("{Enter}")
+LWin & RAlt:: Send("{LCtrl down}{Enter}{LCtrl up}")
+Shift & RAlt:: Send("{LShift down}{Enter}{LShift up}")
