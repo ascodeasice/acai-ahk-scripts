@@ -21,17 +21,14 @@
   }
 }
 
-; alt+caps: caps
-!CapsLock::CapsLock
+; alt+caps: delete
+!CapsLock::Delete
 
 ; win+caps: alt+f4
 #CapsLock::
 {
   Send "!{f4}"
 }
-
-; Ctrl+CapsLock = Delete
-^CapsLock::Delete
 
 ; SECTION: win+escape to exit when bug exits
 #Esc:: ExitApp

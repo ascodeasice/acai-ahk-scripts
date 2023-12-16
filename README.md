@@ -7,8 +7,7 @@ My ahk scripts that I use daily, including rotating dual monitor, shortcut for w
 - map `capslock` to:
   - `escape` when pressed
   - `ctrl` when holding it while pressing other keys
-  - `delete` when using `ctrl+capslock`
-  - `capslock` when using `alt+capslock`
+  - `delete` when using `alt+capslock`
   - `alt+F4` when using `win+capslock`
 - use `win+escape` to stop this ahk script
 - `ctrl+alt+r` to rotate the second monitor in windows (open setting and tab to it)
