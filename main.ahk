@@ -36,7 +36,7 @@
 ; SECTION: Start WSL Terminal in the repo directory
 ^!t:: ; Ctrl+Alt+T
 {
-  Run("wsl --cd \\wsl.localhost\Ubuntu\home\leo\repo")
+  Run("wsl --cd ~")
 }
 
 ; SECTION: Rotate second display screen
